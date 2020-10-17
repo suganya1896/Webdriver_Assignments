@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="5">
+<listeners>
+<listener class-name="testng.week6.RetryListener"></listener>
+</listeners>
+<groups>
+<run>
+<!-- to run particular group of testcases-->
+<include name="functional"></include> 
+<include name="regression"></include> 
+<include name="smoke"></include> 
+<!-- to exclude particular testcase under group (not to run those cases under specified group <exclude name="smoke"></exclude>-->
+</run>
+</groups>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testng.week6.GroupTC"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
